@@ -1,172 +1,249 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html> 
-	<head>
-		<title>Miniport by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zachary Ball | Data Analyst Portfolio</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font --><style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scroll indicator/link color for dark theme */
+        .scrolly:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+        }
+        .featured-icon {
+            color: #d97706; /* Tailwind Amber-600 */
+        }
+        /* Ensure consistent height for project descriptions */
+        .project-description {
+            min-height: 4.5rem; /* Adjust as needed to fit your longest description over 3 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Make image containers have a consistent aspect ratio */
+        .image-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+            height: 0;
+            overflow: hidden;
+        }
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-   			 		<li><a href="#top">About Me</a></li>
-    		 		<li><a href="#portfolio">My Project</a></li>
-   					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+<body class="bg-gray-900 text-gray-100 antialiased">
 
-		<!-- Home -->
-		<article id="top" class="wrapper style1">
-			<div class="container">
-				<div class="row aln-middle">
-					
-					<div class="col-4 col-5-large col-12-medium">
-						<span class="image fit"><img src="images/me.jpg" alt="" /></span>
-					</div>
-					
-					<div class="col-8 col-7-large col-12-medium" style="text-align: center;">
-						<header>
-							<h1>Hello, World! I am <strong>Zachary Ball</strong></h1>
-						</header>
-						<p>I am a Data Analyst specializing in <strong>Business Information Security</strong> and <strong>Data Analytics</strong>. I turn raw data into clear stories.</p>
-						<a href="#portfolio" class="button large scrolly">See my latest project</a>
-					</div>
-					
-				</div>
-			</div>
-		</article>
+    <!-- Tailwind Config for the accent color (Coffee/Amber) --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-dark': '#4F3A35',
+                        'coffee-accent': '#D97706', // A strong accent color
+                    }
+                }
+            }
+        }
+    </script>
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>My Technical Toolbox</h2>
-						<p>The tools and technologies I use to drive insights.</p>
-					</header>
-					<div class="row aln-center">
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-chart-bar"></span>
-								<h3>Data Visualization</h3>
-								<p>I build interactive dashboards in <strong>Power BI</strong> and <strong>Excel</strong> to make complex data easy for stakeholders to understand.</p>
-							</section>
-						</div>
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-database"></span>
-								<h3>Data Management</h3>
-								<p>I use <strong>SQL (MySQL)</strong> to query databases, join tables, and create views that prepare data for analysis.</p>
-							</section>
-						</div>
-						
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-code"></span>
-								<h3>Statistical Analysis</h3>
-								<p>I utilize <strong>R</strong> (specifically <code>data.table</code>) for advanced data cleaning, transformation, and statistical testing.</p>
-							</section>
-						</div>
-						
-					</div>
-					 <footer>
-						<a href="#portfolio" class="button large scrolly">See my projects</a>
-					</footer>
-				</div>
-			
-		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-    <div class="container">
-        <header>
-            <h2>My Featured Project</h2>
-            <p>Here is a deep dive into my latest data analysis work.</p>
-        </header>
-        
-        <div class="row aln-center">
+    <!-- Nav (Fixed Header) --><nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 shadow-lg border-b border-coffee-accent/20">
+        <ul class="container mx-auto flex justify-center py-4 space-x-6 text-sm md:text-base">
+            <li><a href="#top" class="text-white hover:text-coffee-accent transition duration-300">About Me</a></li>
+            <li><a href="#portfolio" class="text-white hover:text-coffee-accent transition duration-300">My Projects</a></li>
+            <li><a href="#contact" class="text-white hover:text-coffee-accent transition duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home (About Me) --><article id="top" class="wrapper pt-28 pb-16 md:pt-40 md:pb-24 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                
+                <!-- Image Placeholder --><!-- The original image link "images/me.jpg" is replaced with a placeholder --><div class="w-48 h-48 md:w-60 md:h-60 flex-shrink-0">
+                    <img src="images/me.jpg" alt="Professional portrait placeholder" class="rounded-full object-cover w-full h-full border-4 border-coffee-accent shadow-xl">
+                </div>
+                
+                <!-- Intro Text --><div class="text-center md:text-left">
+                    <header class="mb-4">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 leading-tight">Hello, World! I am <strong class="text-coffee-accent">Zachary Ball</strong></h1>
+                    </header>
+                    <p class="text-lg text-gray-300 mb-6">I am a Data Analyst specializing in <strong class="text-white">Business Information Security</strong> and <strong class="text-white">Data Analytics</strong>. I turn raw data into clear stories.</p>
+                    <a href="#portfolio" class="scrolly inline-block bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105">See my latest project</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Work (Skills) --><article id="work" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-b border-gray-700">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">My Technical Toolbox</h2>
+                <p class="text-gray-400">The tools and technologies I use to drive insights.</p>
+            </header>
             
-            <div class="col-6 col-12-medium">
-                <article class="box style2">
-                    <a href="https://github.com/zjrball" class="image featured">
-                        <img src="images/dashboard.png" alt="Retail Dashboard Screenshot" />
-                    </a>
-                    <h3><a href="https://github.com/zjrball">Retail Performance Dashboard</a></h3>
-                    <p>An end-to-end analysis using SQL, PowerBI, and R. I analyzed sales trends, weather impacts, and customer demographics for a Florida retail chain.</p>
-                    <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="button">View Code & Findings</a>
-                </article>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Skill 1: Data Visualization --><div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
+                        <!-- Icon: Chart Bar (replicated with inline SVG for Lucide icon) --><div class="text-4xl mb-4 featured-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3 w-10 h-10 mx-auto text-coffee-accent"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-center">Data Visualization</h3>
+                        <p class="text-gray-400 text-center">I build interactive dashboards in <strong class="text-white">Power BI</strong> and <strong class="text-white">Excel</strong> to make complex data easy for stakeholders to understand.</p>
+                    </section>
+                </div>
+                
+                <!-- Skill 2: Data Management --><div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
+                        <!-- Icon: Database --><div class="text-4xl mb-4 featured-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-10 h-10 mx-auto text-coffee-accent"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/><path d="M3 19A9 3 0 0 0 21 19"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-center">Data Management</h3>
+                        <p class="text-gray-400 text-center">I use <strong class="text-white">SQL (MySQL)</strong> to query databases, join tables, and create views that prepare data for analysis.</p>
+                    </section>
+                </div>
+                
+                <!-- Skill 3: Statistical Analysis --><div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
+                        <!-- Icon: Code --><div class="text-4xl mb-4 featured-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-square w-10 h-10 mx-auto text-coffee-accent"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-center">Statistical Analysis</h3>
+                        <p class="text-gray-400 text-center">I utilize <strong class="text-white">R</strong> (specifically <code>data.table</code>) for advanced data cleaning, transformation, and statistical testing.</p>
+                    </section>
+                </div>
             </div>
+            
+            <footer class="text-center mt-12">
+                <a href="#portfolio" class="scrolly inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105 border border-transparent hover:border-coffee-accent">See my projects</a>
+            </footer>
+        </div>
+    </article>
 
-            <div class="col-6 col-12-medium">
-                <article class="box style2">
-                    <span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-                    <h3><a href="#">More Coming Soon...</a></h3>
-                    <p>I am currently working on a new project involving Data Cleaning in R. Stay tuned!</p>
-                </article>
+    <!-- Portfolio --><article id="portfolio" class="wrapper py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <header class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">My Featured Projects</h2>
+                <p class="text-gray-400">Here is a deep dive into my latest data analysis work.</p>
+            </header>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Coffee Sales Dashboard Analysis (NEW PROJECT - Primary Focus) --><div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full">
+                        <!-- Image Container with fixed aspect ratio --><a href="https://github.com/zjrball/Coffee_Sales_Dashboard" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
+                            <!-- Using a placeholder image with the coffee color scheme --><img src="images/coffee_dashboard.png" alt="Coffee Sales Dashboard Screenshot" >
+                        </a>
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="https://github.com/zjrball/Coffee_Sales_Dashboard" class="text-white hover:text-coffee-accent transition duration-300">Retail Shop Case Study: Coffee Sales Dashboard</a>
+                        </h3>
+                        <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
+                            An end-to-end analysis demonstrating proficiency with <strong>Excel Pivot Tables, Slicers, and nested formulas</strong>
+                        </p>
+                        <div class="mt-auto"> <!-- Push button to bottom --><a href="https://github.com/zjrball/Coffee_Sales_Dashboard" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Project 2: Retail Performance Dashboard (ORIGINAL PROJECT - Second Focus) --><div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-gray-600 flex flex-col h-full">
+                        <!-- Image Container with fixed aspect ratio --><a href="https://github.com/zjrball/Retail_Shop_Case_Study_Original" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
+                            <img src="images/dashboard.png" alt="Retail Performance Dashboard Screenshot">
+                        </a>
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="https://github.com/zjrball/Retail_Shop_Case_Study_Original" class="text-white hover:text-coffee-accent transition duration-300">Retail Performance Dashboard (Q1-Q4 Analysis)</a>
+                        </h3>
+                        <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
+                            Original data analysis project using <strong>SQL</strong> for querying and <strong>Power BI</strong> for advanced visualization. 
+                        </p>
+                        <div class="mt-auto"> <!-- Push button to bottom --><a href="https://github.com/zjrball/Retail_Shop_Case_Study_Original" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Project 3: Data Cleaning & Modeling in R (PLACEHOLDER) --><div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-gray-600 flex flex-col h-full">
+                        <!-- Image Container with fixed aspect ratio --><span class="image-container block mb-4 overflow-hidden rounded-lg flex-shrink-0">
+                            <img src="https://placehold.co/600x338/1f2937/ffffff?text=Next+Project+Loading" alt="Placeholder image for the next project" class="opacity-75">
+                        </span>
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="#" class="text-gray-400">Data Cleaning & Modeling in R</a>
+                        </h3>
+                        <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
+                            I am currently expanding my technical toolkit by focusing on an advanced data cleaning project using the **R** programming language and data manipulation techniques. Stay tuned!
+                        </p>
+                        <div class="mt-auto"> <!-- Push button to bottom --><a href="#" class="button inline-block text-sm bg-gray-600 text-white font-bold py-2 px-6 rounded-md cursor-not-allowed">In Progress</a>
+                        </div>
+                    </article>
+                </div>
+                
             </div>
+            
+            <footer class="text-center mt-12">
+                <p class="text-gray-400 mb-4">Ready to discuss data analysis or business strategy?</p>
+                <a href="#contact" class="scrolly inline-block bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105">Get in touch</a>
+            </footer>
+        </div>
+    </article>
 
-				</div>
-				<footer>
-					<p>Want to see the details behind the data?</p>
-					<a href="mailto:zacharyball2017@gmail.com" class="button large scrolly">Get in touch</a>
-				</footer>
-			</div>
-		</article>
+    <!-- Contact --><article id="contact" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto px-4 max-w-xl">
+            
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Let's Connect</h3>
+                <p class="text-gray-400 mb-6">
+                    The best way to reach me is via email or LinkedIn.
+                </p>
+                <div class="mb-8">
+                    <strong class="text-white block mb-1">Email:</strong> 
+                    <a href="mailto:zacharyball2017@gmail.com?subject=Hello%20Zachary%20-%20Data%20Analysis%20Inquiry" class="text-coffee-accent hover:text-amber-400 transition duration-300 text-lg font-medium underline">zacharyball2017@gmail.com</a>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4">Find me on ...</h3>
+                
+                <!-- Social Icons --><ul class="flex justify-center space-x-6">
+                    <li>
+                        <!-- LinkedIn Icon --><a href="https://www.linkedin.com/in/zacharyjball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-blue-600 transition duration-300 text-white shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.5c-1.12 0-2-.91-2-2.04C4.5 3.33 5.38 2.5 6.5 2.5S8.5 3.33 8.5 4.46C8.5 5.59 7.62 6.5 6.5 6.5zM20 19h-3v-5.63c0-1.35-.5-1.58-1.28-1.58-.69 0-1.14.38-1.33.74C14.2 12.8 14.12 13.06 14.12 13.33V19h-3V8h3v1.88s.92-1.68 3-1.68c2.18 0 3.88 1.45 3.88 4.54V19z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Github Icon --><a href="https://github.com/zjrball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-purple-600 transition duration-300 text-white shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.385.6.113.82-.258.82-.577 0-.285-.011-1.04-.017-2.041-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.334-1.755-1.334-1.755-1.088-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.793 1.304 3.477.994.108-.775.418-1.304.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.237-3.221-.124-.302-.534-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.298-1.23 3.298-1.23.652 1.652.242 2.874.118 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.806 5.624-5.487 5.922.43.37.817 1.127.817 2.275 0 1.643-.015 2.973-.015 3.374 0 .322.217.696.825.575C20.565 21.808 24 17.317 24 12 24 5.373 18.627 0 12 0z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                
+                <hr class="my-8 border-gray-700"/>
+                
+                <footer class="text-xs text-gray-500">
+                    <ul id="copyright">
+                        <li>&copy; Zachary Ball. All rights reserved.</li>
+                        <li>Design: Adapted from HTML5 UP template (Miniport)</li>
+                    </ul>
+                </footer>
+            </div>
+            
+        </div>
+    </article>
 
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-				
-					<div class="row">
-						<div class="col-12">
-							<div class="row">
-								<div class="col-12">
-									<h3 style="text-align: center;">Let's Connect</h3>
-									<p style="text-align: center; color: #e0e0e0;">
-										The best way to reach me is via email or LinkedIn.
-										<br />
-										<strong style="color: #ffffff;">Email:</strong> 
-										<a href="mailto:zacharyball2017@gmail.com?subject=Hello%20Zachary%20-%20Data%20Analysis%20Inquiry" style="color: #ffffff; text-decoration: underline;">zacharyball2017@gmail.com</a>
-									</p>
-								</div>
-								<div class="col-12">
-									
-									<h3>Find me on ...</h3>
-									<ul class="social">
-										<li><a href="https://www.linkedin.com/in/zacharyjball" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										<li><a href="https://github.com/zjrball" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-									<hr />
-								</div>
-							</div>
-						</div>
-						<div class="col-12">
-							
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-				</div>
-			</article>
-
-
-				 
-		<!--   Scripts   -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
