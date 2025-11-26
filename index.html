@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary Ball | Data Analyst Portfolio</title>
-    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font --><style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
@@ -21,9 +21,9 @@
         }
         /* Ensure consistent height for project descriptions */
         .project-description {
-            min-height: 4.5rem; /* Adjust as needed to fit your longest description over 3 lines */
+            min-height: 4.5rem; 
             display: -webkit-box;
-            -webkit-line-clamp: 3; /* Limit to 3 lines */
+            -webkit-line-clamp: 3; 
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -31,7 +31,7 @@
         /* Make image containers have a consistent aspect ratio */
         .image-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
         }
@@ -43,41 +43,47 @@
             height: 100%;
             object-fit: cover;
         }
+        /* Square aspect ratio for the photo grid */
+        .square-image {
+            padding-bottom: 100%; /* 1:1 Aspect Ratio */
+        }
     </style>
 </head>
 
 <body class="bg-gray-900 text-gray-100 antialiased">
 
-    <!-- Tailwind Config for the accent color (Coffee/Amber) --><script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'coffee-dark': '#4F3A35',
-                        'coffee-accent': '#D97706', // A strong accent color
-                    }
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'gray-900': '#0f172a', // A deep "Slate" blue-black background
+                    'gray-800': '#1e293b', // A slightly lighter slate for boxes
+                    'coffee-accent': '#38bdf8', // A bright "Sky Blue" (replaces the orange)
                 }
             }
         }
-    </script>
+    }
+</script>
 
-    <!-- Nav (Fixed Header) --><nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 shadow-lg border-b border-coffee-accent/20">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 shadow-lg border-b border-coffee-accent/20">
         <ul class="container mx-auto flex justify-center py-4 space-x-6 text-sm md:text-base">
-            <li><a href="#top" class="text-white hover:text-coffee-accent transition duration-300">About Me</a></li>
+            <li><a href="#top" class="text-white hover:text-coffee-accent transition duration-300">Home</a></li>
             <li><a href="#portfolio" class="text-white hover:text-coffee-accent transition duration-300">My Projects</a></li>
+            <li><a href="#about" class="text-white hover:text-coffee-accent transition duration-300">About Me</a></li>
             <li><a href="#contact" class="text-white hover:text-coffee-accent transition duration-300">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Home (About Me) --><article id="top" class="wrapper pt-28 pb-16 md:pt-40 md:pb-24 bg-gray-900">
+    <article id="top" class="wrapper pt-28 pb-16 md:pt-40 md:pb-24 bg-gray-900">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                 
-                <!-- Image Placeholder --><!-- The original image link "images/me.jpg" is replaced with a placeholder --><div class="w-48 h-48 md:w-60 md:h-60 flex-shrink-0">
+                <div class="w-48 h-48 md:w-60 md:h-60 flex-shrink-0">
                     <img src="images/me.jpg" alt="Professional portrait placeholder" class="rounded-full object-cover w-full h-full border-4 border-coffee-accent shadow-xl">
                 </div>
                 
-                <!-- Intro Text --><div class="text-center md:text-left">
+                <div class="text-center md:text-left">
                     <header class="mb-4">
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 leading-tight">Hello, World! I am <strong class="text-coffee-accent">Zachary Ball</strong></h1>
                     </header>
@@ -88,7 +94,7 @@
         </div>
     </article>
 
-    <!-- Work (Skills) --><article id="work" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-b border-gray-700">
+    <article id="work" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-b border-gray-700">
         <div class="container mx-auto px-4 max-w-6xl">
             <header class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">My Technical Toolbox</h2>
@@ -97,9 +103,9 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Skill 1: Data Visualization --><div class="col-span-1">
-                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
-                        <!-- Icon: Chart Bar (replicated with inline SVG for Lucide icon) --><div class="text-4xl mb-4 featured-icon">
+                <div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300 h-full">
+                        <div class="text-4xl mb-4 featured-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3 w-10 h-10 mx-auto text-coffee-accent"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-2 text-center">Data Visualization</h3>
@@ -107,9 +113,9 @@
                     </section>
                 </div>
                 
-                <!-- Skill 2: Data Management --><div class="col-span-1">
-                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
-                        <!-- Icon: Database --><div class="text-4xl mb-4 featured-icon">
+                <div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300 h-full">
+                        <div class="text-4xl mb-4 featured-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-10 h-10 mx-auto text-coffee-accent"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/><path d="M3 19A9 3 0 0 0 21 19"/></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-2 text-center">Data Management</h3>
@@ -117,9 +123,9 @@
                     </section>
                 </div>
                 
-                <!-- Skill 3: Statistical Analysis --><div class="col-span-1">
-                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300">
-                        <!-- Icon: Code --><div class="text-4xl mb-4 featured-icon">
+                <div class="col-span-1">
+                    <section class="bg-gray-900 p-6 rounded-xl shadow-2xl border border-gray-700 hover:border-coffee-accent transition duration-300 h-full">
+                        <div class="text-4xl mb-4 featured-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-square w-10 h-10 mx-auto text-coffee-accent"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m10 10-2 2 2 2"/><path d="m14 14 2-2-2-2"/></svg>
                         </div>
                         <h3 class="text-xl font-semibold mb-2 text-center">Statistical Analysis</h3>
@@ -127,14 +133,10 @@
                     </section>
                 </div>
             </div>
-            
-            <footer class="text-center mt-12">
-                <a href="#portfolio" class="scrolly inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105 border border-transparent hover:border-coffee-accent">See my projects</a>
-            </footer>
         </div>
     </article>
 
-    <!-- Portfolio --><article id="portfolio" class="wrapper py-16 md:py-24 bg-gray-900">
+    <article id="portfolio" class="wrapper py-16 md:py-24 bg-gray-900">
         <div class="container mx-auto px-4 max-w-6xl">
             <header class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">My Featured Projects</h2>
@@ -143,10 +145,10 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Project 1: Coffee Sales Dashboard Analysis (NEW PROJECT - Primary Focus) --><div class="col-span-1">
-                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full">
-                        <!-- Image Container with fixed aspect ratio --><a href="https://github.com/zjrball/coffee_sales" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
-                            <!-- Using a placeholder image with the coffee color scheme --><img src="images/coffee_dashboard.png" alt="Coffee Sales Dashboard Screenshot" >
+                <div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full hover:shadow-orange-900/20 transition duration-300">
+                        <a href="https://github.com/zjrball/coffee_sales" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
+                            <img src="images/coffee_dashboard.png" alt="Coffee Sales Dashboard Screenshot" >
                         </a>
                         <h3 class="text-xl font-semibold mb-2">
                             <a href="https://github.com/zjrball/coffee_sales" class="text-white hover:text-coffee-accent transition duration-300">Retail Shop Case Study: Coffee Sales Dashboard</a>
@@ -154,14 +156,15 @@
                         <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
                             An end-to-end analysis demonstrating proficiency with <strong>Excel Pivot Tables, Slicers, and nested formulas</strong>
                         </p>
-                        <div class="mt-auto"> <!-- Push button to bottom --><a href="https://github.com/zjrball/coffee_sales" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                        <div class="mt-auto"> 
+                            <a href="https://github.com/zjrball/coffee_sales" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
                         </div>
                     </article>
                 </div>
 
-                <!-- Project 2: Retail Performance Dashboard (ORIGINAL PROJECT - Second Focus) --><div class="col-span-1">
-                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-gray-600 flex flex-col h-full">
-                        <!-- Image Container with fixed aspect ratio --><a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
+                <div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-gray-600 flex flex-col h-full hover:shadow-gray-700/30 transition duration-300">
+                        <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
                             <img src="images/dashboard.png" alt="Retail Performance Dashboard Screenshot">
                         </a>
                         <h3 class="text-xl font-semibold mb-2">
@@ -170,51 +173,77 @@
                         <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
                             Original data analysis project using <strong>SQL</strong> for querying and <strong>Power BI</strong> for advanced visualization. 
                         </p>
-                        <div class="mt-auto"> <!-- Push button to bottom --><a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                        <div class="mt-auto"> 
+                            <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
                         </div>
                     </article>
                 </div>
                 
-                <!-- Project 3: Retail Strategy & Analytics (WIP) -->
-                    <div class="col-span-1">
-                        <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-blue-500 flex flex-col h-full">
-                            
-                            <!-- Image Container -->
-                            <span class="image-container block mb-4 overflow-hidden rounded-lg flex-shrink-0">
-                                <!-- TIP: Take a screenshot of one of your R graphs and replace this src link later! -->
-                                <img src="https://placehold.co/600x338/1f2937/ffffff?text=Retail+Analytics+%26+R" alt="Retail Analytics Project Dashboard" class="opacity-90 hover:opacity-100 transition-opacity duration-300">
-                            </span>
-                            
-                            <h3 class="text-xl font-semibold mb-2">
-                                <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="text-white hover:text-blue-400 transition-colors">
-                                    Retail Strategy & Analytics in R
-                                </a>
-                            </h3>
-                            
-                            <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
-                                Evaluating the financial impact of new store layouts using customer transaction data. I am performing data cleaning, customer segmentation, and A/B testing (Uplift Analysis) using <strong>R (tidyverse & ggplot2)</strong>.
-                            </p>
-                            
-                            <div class="mt-auto"> 
-                                <!-- Button is now active (Blue) and clickable -->
-                                <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="button inline-block text-sm bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-md transition-colors">
-                                    View Code (WIP)
-                                </a>
-                    </div>
-
-    </article>
-</div>
+                <div class="col-span-1">
+                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-blue-500 flex flex-col h-full hover:shadow-blue-900/20 transition duration-300">
+                        <span class="image-container block mb-4 overflow-hidden rounded-lg flex-shrink-0">
+                            <img src="https://placehold.co/600x338/1f2937/ffffff?text=Retail+Analytics+%26+R" alt="Retail Analytics Project Dashboard" class="opacity-90 hover:opacity-100 transition-opacity duration-300">
+                        </span>
+                        
+                        <h3 class="text-xl font-semibold mb-2">
+                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                                Retail Strategy & Analytics in R
+                            </a>
+                        </h3>
+                        
+                        <p class="text-gray-400 mb-4 text-sm project-description flex-grow">
+                            Evaluating the financial impact of new store layouts. I am performing data cleaning, segmentation, and A/B testing using <strong>R (tidyverse & ggplot2)</strong>.
+                        </p>
+                        
+                        <div class="mt-auto"> 
+                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="button inline-block text-sm bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-md transition-colors">
+                                View Code (WIP)
+                            </a>
+                        </div>
+                    </article>
+                </div>
                 
             </div>
-            
-            <footer class="text-center mt-12">
-                <p class="text-gray-400 mb-4">Ready to discuss data analysis or business strategy?</p>
-                <a href="#contact" class="scrolly inline-block bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105">Get in touch</a>
-            </footer>
         </div>
     </article>
 
-    <!-- Contact --><article id="contact" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-gray-700">
+    <article id="about" class="wrapper py-16 bg-gray-800 border-t border-b border-gray-700">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 border-l-4 border-coffee-accent pl-4">More Than Just Data</h2>
+                    <p class="text-gray-300 mb-4 text-lg leading-relaxed">
+                        When I'm not analyzing retail trends or working on my Master's at 
+                        <strong class="text-white">Arizona State University</strong>, you can likely find me 
+                        managing shifts at Starbucks. 
+                    </p>
+                    <p class="text-coffee-accent italic">
+                        I balance my technical studies with by listening to Dungeons & Dragons podcasts, watching Dropout,
+                     and keeping my two cats out of trouble.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 p-4">
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform rotate-2 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
+                         <img src="images/work.jpg" alt="Zachary working">
+                    </div>
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform -rotate-2 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
+                         <img src="images/korbin.JPG" alt="Korbin">
+                    </div>
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform -rotate-1 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
+                         <img src="images/miso.JPG" alt="Miso">
+                    </div>
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform rotate-3 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
+                         <img src="images/dice.jpg" alt="D&D Setup">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <article id="contact" class="wrapper py-16 md:py-24 bg-gray-900 border-t border-gray-800">
         <div class="container mx-auto px-4 max-w-xl">
             
             <div class="text-center">
@@ -229,16 +258,16 @@
                 
                 <h3 class="text-xl font-semibold mb-4">Find me on ...</h3>
                 
-                <!-- Social Icons --><ul class="flex justify-center space-x-6">
+                <ul class="flex justify-center space-x-6">
                     <li>
-                        <!-- LinkedIn Icon --><a href="https://www.linkedin.com/in/zacharyjball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-blue-600 transition duration-300 text-white shadow-md">
+                        <a href="https://www.linkedin.com/in/zacharyjball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-blue-600 transition duration-300 text-white shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.5c-1.12 0-2-.91-2-2.04C4.5 3.33 5.38 2.5 6.5 2.5S8.5 3.33 8.5 4.46C8.5 5.59 7.62 6.5 6.5 6.5zM20 19h-3v-5.63c0-1.35-.5-1.58-1.28-1.58-.69 0-1.14.38-1.33.74C14.2 12.8 14.12 13.06 14.12 13.33V19h-3V8h3v1.88s.92-1.68 3-1.68c2.18 0 3.88 1.45 3.88 4.54V19z"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <!-- Github Icon --><a href="https://github.com/zjrball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-purple-600 transition duration-300 text-white shadow-md">
+                        <a href="https://github.com/zjrball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-purple-600 transition duration-300 text-white shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.385.6.113.82-.258.82-.577 0-.285-.011-1.04-.017-2.041-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.334-1.755-1.334-1.755-1.088-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.793 1.304 3.477.994.108-.775.418-1.304.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.237-3.221-.124-.302-.534-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.298-1.23 3.298-1.23.652 1.652.242 2.874.118 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.806 5.624-5.487 5.922.43.37.817 1.127.817 2.275 0 1.643-.015 2.973-.015 3.374 0 .322.217.696.825.575C20.565 21.808 24 17.317 24 12 24 5.373 18.627 0 12 0z"/>
                             </svg>
