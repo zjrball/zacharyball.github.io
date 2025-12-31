@@ -51,23 +51,23 @@
     </style>
 </head>
 
-<body class="bg-gray-900 text-gray-100 antialiased">
+<body class="bg-gray-950 text-gray-100 antialiased">
 
 <script>
     tailwind.config = {
         theme: {
             extend: {
                 colors: {
-                    'gray-900': '#0f172a', // A deep "Slate" blue-black background
-                    'gray-800': '#1e293b', // A slightly lighter slate for boxes
-                    'coffee-accent': '#38bdf8', // A bright "Sky Blue" (replaces the orange)
+                    'gray-900': '#1a1a2e', // Softer dark background
+                    'gray-800': '#252c48', // Slightly lighter for boxes
+                    'coffee-accent': '#9fe76a', // Softer, less harsh green
                 }
             }
         }
     }
 </script>
 
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 shadow-lg border-b border-coffee-accent/20">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 shadow-lg border-b border-coffee-accent/20">
         <ul class="container mx-auto flex justify-center py-4 space-x-6 text-sm md:text-base">
             <li><a href="#top" class="text-white hover:text-coffee-accent transition duration-300">Home</a></li>
             <li><a href="#portfolio" class="text-white hover:text-coffee-accent transition duration-300">My Projects</a></li>
@@ -76,7 +76,7 @@
         </ul>
     </nav>
 
-    <article id="top" class="wrapper pt-28 pb-16 md:pt-40 md:pb-24 bg-gray-900">
+    <article id="top" class="wrapper pt-28 pb-16 md:pt-40 md:pb-24 bg-black">
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
                 
@@ -88,18 +88,18 @@
                     <header class="mb-4">
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-2 leading-tight">Hello, World! I am <strong class="text-coffee-accent">Zachary Ball</strong></h1>
                     </header>
-                    <p class="text-lg text-gray-300 mb-6">I am a Data Analyst specializing in <strong class="text-white">Business Information Security</strong> and <strong class="text-white">Data Analytics</strong>. I turn raw data into clear stories.</p>
+                    <p class="text-lg text-gray-300 mb-6">I am a Data Analyst specializing in <strong class="text-white">Business Information Security</strong>. I turn raw data into clear stories.</p>
                     <div class="flex flex-col md:flex-row gap-4 md:gap-4">
-                        <a href="#portfolio" class="scrolly inline-block bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105">See my latest project</a>
-                        <a href="https://github.com/zjrball" class="scrolly inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-purple-500 transition duration-300 transform hover:scale-105">GitHub</a>
-                        <a href="https://www.linkedin.com/in/zacharyjball" class="scrolly inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition duration-300 transform hover:scale-105">LinkedIn</a>
+                        <a href="#portfolio" class="scrolly inline-block bg-coffee-accent text-black font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-300 transition duration-300 transform hover:scale-105">See my latest project</a>
+                        <a href="https://github.com/zjrball" class="scrolly inline-block bg-gray-800 text-coffee-accent font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 border-2 border-coffee-accent transition duration-300 transform hover:scale-105">GitHub</a>
+                        <a href="https://www.linkedin.com/in/zacharyjball" class="scrolly inline-block bg-gray-800 text-coffee-accent font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-700 border-2 border-coffee-accent transition duration-300 transform hover:scale-105">LinkedIn</a>
                     </div>
                 </div>
             </div>
         </div>
     </article>
 
-    <article id="work" class="wrapper py-16 md:py-24 bg-gray-800 border-t border-b border-gray-700">
+    <article id="work" class="wrapper py-16 md:py-24 bg-gray-950 border-t border-b border-gray-800\">
         <div class="container mx-auto px-4 max-w-6xl">
             <header class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">My Technical Toolbox</h2>
@@ -151,7 +151,7 @@
         </div>
     </article>
 
-    <article id="portfolio" class="wrapper py-16 md:py-24 bg-gray-900">
+    <article id="portfolio" class="wrapper py-16 md:py-24 bg-gray-950 border-t border-b border-gray-800\">
         <div class="container mx-auto px-4 max-w-6xl">
             <header class="text-center mb-12">
                 <h2 class="text-3xl font-bold mb-2">My Featured Projects</h2>
@@ -161,7 +161,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <div class="col-span-1">
-                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full hover:shadow-orange-900/20 transition duration-300">
+                    <article class="box style2 bg-gray-950 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full hover:shadow-coffee-accent/20 transition duration-300">
                         <a href="https://github.com/zjrball/coffee_sales" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
                             <img src="images/coffee_dashboard.png" alt="Coffee Sales Dashboard Screenshot" >
                         </a>
@@ -172,13 +172,13 @@
                             An end-to-end analysis demonstrating proficiency with <strong>Excel Pivot Tables, Slicers, and nested formulas</strong>
                         </p>
                         <div class="mt-auto"> 
-                            <a href="https://github.com/zjrball/coffee_sales" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                            <a href="https://github.com/zjrball/coffee_sales" class="button inline-block text-sm bg-coffee-accent text-black font-bold py-2 px-6 rounded-md hover:bg-green-300 transition duration-300">View Code & Findings</a>
                         </div>
                     </article>
                 </div>
 
                 <div class="col-span-1">
-                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-gray-600 flex flex-col h-full hover:shadow-gray-700/30 transition duration-300">
+                    <article class="box style2 bg-gray-950 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full hover:shadow-coffee-accent/20 transition duration-300">
                         <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="image-container block mb-4 overflow-hidden rounded-lg hover:opacity-90 transition duration-300 flex-shrink-0">
                             <img src="images/dashboard.png" alt="Retail Performance Dashboard Screenshot">
                         </a>
@@ -189,19 +189,19 @@
                             Original data analysis project using <strong>SQL</strong> for querying and <strong>Power BI</strong> for advanced visualization. 
                         </p>
                         <div class="mt-auto"> 
-                            <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="button inline-block text-sm bg-white text-gray-900 font-bold py-2 px-6 rounded-md hover:bg-gray-200 transition duration-300">View Code & Findings</a>
+                            <a href="https://github.com/zjrball/Retail_Shop_Case_Study" class="button inline-block text-sm bg-coffee-accent text-black font-bold py-2 px-6 rounded-md hover:bg-green-300 transition duration-300">View Code & Findings</a>
                         </div>
                     </article>
                 </div>
                 
                 <div class="col-span-1">
-                    <article class="box style2 bg-gray-800 p-6 rounded-xl shadow-2xl border-t-4 border-blue-500 flex flex-col h-full hover:shadow-blue-900/20 transition duration-300">
+                    <article class="box style2 bg-gray-950 p-6 rounded-xl shadow-2xl border-t-4 border-coffee-accent flex flex-col h-full hover:shadow-coffee-accent/20 transition duration-300">
                         <span class="image-container block mb-4 overflow-hidden rounded-lg flex-shrink-0">
                             <img src="https://placehold.co/600x338/1f2937/ffffff?text=Retail+Analytics+%26+R" alt="Retail Analytics Project Dashboard" class="opacity-90 hover:opacity-100 transition-opacity duration-300">
                         </span>
                         
                         <h3 class="text-xl font-semibold mb-2">
-                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="text-white hover:text-blue-400 transition-colors">
+                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="text-white hover:text-coffee-accent transition-colors">
                                 Retail Strategy & Analytics in R
                             </a>
                         </h3>
@@ -211,7 +211,7 @@
                         </p>
                         
                         <div class="mt-auto"> 
-                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="button inline-block text-sm bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-md transition-colors">
+                            <a href="https://github.com/zjrball/Retail-Analytics-Quantium" target="_blank" class="button inline-block text-sm bg-gray-800 hover:bg-gray-700 text-coffee-accent font-bold py-2 px-6 rounded-md transition-colors border-2 border-coffee-accent">
                                 View Code (WIP)
                             </a>
                         </div>
@@ -222,7 +222,7 @@
         </div>
     </article>
 
-    <article id="about" class="wrapper py-16 bg-gray-800 border-t border-b border-gray-700">
+    <article id="about" class="wrapper py-16 bg-gray-950 border-t border-b border-gray-800">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
@@ -240,16 +240,16 @@
                 </div>
 
                 <div class="grid grid-cols-2 gap-4 p-4">
-                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform rotate-2 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-coffee-accent transform rotate-2 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
                          <img src="images/work.jpg" alt="Zachary working">
                     </div>
-                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform -rotate-2 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-coffee-accent transform -rotate-2 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
                          <img src="images/korbin.JPG" alt="Korbin">
                     </div>
-                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform -rotate-1 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-coffee-accent transform -rotate-1 hover:rotate-0 transition duration-500 ease-in-out z-10 hover:z-20 hover:scale-105">
                          <img src="images/miso.JPG" alt="Miso">
                     </div>
-                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-gray-600 transform rotate-3 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
+                    <div class="image-container square-image rounded-xl overflow-hidden shadow-lg border-2 border-coffee-accent transform rotate-3 hover:rotate-0 transition duration-500 ease-in-out mt-8 z-10 hover:z-20 hover:scale-105">
                          <img src="images/dice.jpg" alt="D&D Setup">
                     </div>
                 </div>
@@ -258,7 +258,7 @@
         </div>
     </article>
 
-    <article id="contact" class="wrapper py-16 md:py-24 bg-gray-900 border-t border-gray-800">
+    <article id="contact" class="wrapper py-16 md:py-24 bg-black border-t border-gray-900">
         <div class="container mx-auto px-4 max-w-2xl">
             
             <div class="text-center">
@@ -268,7 +268,7 @@
                 </p>
 
                 <!-- Contact Form -->
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700 mb-8">
+                <div class="bg-gray-950 p-8 rounded-xl shadow-2xl border border-gray-800 mb-8\">
                     <form id="contactForm" class="space-y-4">
                         <div>
                             <label for="name" class="block text-left text-gray-300 font-medium mb-2">Name</label>
@@ -277,7 +277,7 @@
                                 id="name" 
                                 name="name" 
                                 required
-                                class="w-full px-4 py-2 bg-gray-900 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300"
+                                class="w-full px-4 py-2 bg-gray-950 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300"
                                 placeholder="Your name"
                             >
                         </div>
@@ -289,7 +289,7 @@
                                 id="email" 
                                 name="email" 
                                 required
-                                class="w-full px-4 py-2 bg-gray-900 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300"
+                                class="w-full px-4 py-2 bg-gray-950 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300"
                                 placeholder="your.email@example.com"
                             >
                         </div>
@@ -301,14 +301,14 @@
                                 name="message" 
                                 required
                                 rows="5"
-                                class="w-full px-4 py-2 bg-gray-900 text-white border border-gray-600 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300 resize-none"
+                                class="w-full px-4 py-2 bg-gray-950 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-coffee-accent transition duration-300 resize-none"
                                 placeholder="Your message here..."
                             ></textarea>
                         </div>
 
                         <button 
                             type="submit" 
-                            class="w-full bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105"
+                            class="w-full bg-coffee-accent text-black font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-300 transition duration-300 transform hover:scale-105"
                         >
                             Send Message
                         </button>
@@ -318,13 +318,13 @@
                 </div>
 
                 <!-- Resume Download Section -->
-                <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700 mb-8">
+                <div class="bg-gray-950 p-8 rounded-xl shadow-2xl border border-gray-800 mb-8">
                     <h4 class="text-xl font-semibold mb-4 text-white">Download My Resume</h4>
                     <p class="text-gray-400 mb-4">Check out my full experience and qualifications.</p>
                     <a 
                         href="resume.pdf" 
                         download
-                        class="inline-block bg-coffee-accent text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-400 transition duration-300 transform hover:scale-105"
+                        class="inline-block bg-coffee-accent text-black font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-300 transition duration-300 transform hover:scale-105"
                     >
                         Download PDF
                     </a>
@@ -339,14 +339,14 @@
                 
                 <ul class="flex justify-center space-x-6">
                     <li>
-                        <a href="https://www.linkedin.com/in/zacharyjball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-blue-600 transition duration-300 text-white shadow-md">
+                        <a href="https://www.linkedin.com/in/zacharyjball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 hover:bg-coffee-accent hover:text-black transition duration-300 text-white shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.5c-1.12 0-2-.91-2-2.04C4.5 3.33 5.38 2.5 6.5 2.5S8.5 3.33 8.5 4.46C8.5 5.59 7.62 6.5 6.5 6.5zM20 19h-3v-5.63c0-1.35-.5-1.58-1.28-1.58-.69 0-1.14.38-1.33.74C14.2 12.8 14.12 13.06 14.12 13.33V19h-3V8h3v1.88s.92-1.68 3-1.68c2.18 0 3.88 1.45 3.88 4.54V19z"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/zjrball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 hover:bg-purple-600 transition duration-300 text-white shadow-md">
+                        <a href="https://github.com/zjrball" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 hover:bg-coffee-accent hover:text-black transition duration-300 text-white shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.385.6.113.82-.258.82-.577 0-.285-.011-1.04-.017-2.041-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.334-1.755-1.334-1.755-1.088-.745.083-.73.083-.73 1.205.084 1.839 1.237 1.839 1.237 1.07 1.835 2.793 1.304 3.477.994.108-.775.418-1.304.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.237-3.221-.124-.302-.534-1.524.118-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.298-1.23 3.298-1.23.652 1.652.242 2.874.118 3.176.77.84 1.236 1.911 1.236 3.221 0 4.61-2.806 5.624-5.487 5.922.43.37.817 1.127.817 2.275 0 1.643-.015 2.973-.015 3.374 0 .322.217.696.825.575C20.565 21.808 24 17.317 24 12 24 5.373 18.627 0 12 0z"/>
                             </svg>
